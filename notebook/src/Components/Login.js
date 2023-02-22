@@ -7,7 +7,7 @@ const Login = () => {
     const [credentials,setCredentials] = useState({email:"",password:""});
     const navigate = useNavigate();
     const context = useContext(NoteContext);
-    const {setAlert} = context;
+    const {showAlert} = context;
     
     const handleChange = (e)=>{
         setCredentials({...credentials,[e.target.name]:e.target.value})
@@ -22,12 +22,14 @@ const Login = () => {
             body: JSON.stringify({email:credentials.email,password:credentials.password})
         });
         const token = await response.json();
+        console.log(token);
         if(token.success){
             localStorage.setItem("token",token.authtoken);
+            showAlert("success","Successfully logged in");
             navigate("/");
         }
         else{
-            setAlert({type:"danger",msg:"Invalis Credentials"})
+                showAlert("danger","Invalid Credentials");
         }
     }
     return (
@@ -43,7 +45,7 @@ const Login = () => {
                         </div>
                         <div className="form-group ">
                             <label htmlFor="password">Password</label>
-                            <input type="password" className="form-control" id="password" onChange={handleChange}value={credentials.password}  name="password" placeholder="Password" required/>
+                            <input type="password" className="form-control" id="password" onChange={handleChange} value={credentials.password}  name="password" placeholder="Password" required/>
                         </div>
                         <button type="submit" className="btn btn-primary my-2">Login</button>
                     </div>

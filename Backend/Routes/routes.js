@@ -8,7 +8,7 @@ const fetchuser = require('../middlewares/fetchUser')
 require('dotenv').config();
 
 const jwt_secret = process.env.JWT_SECRET;
-let success = false;
+
 
 //ROUTE 1 : Creating a User using :POST /api/auth/create_user    without using authentication
 router.post('/create_user', [body('name').isLength({ min: 5 }),
@@ -29,7 +29,7 @@ body('password', "minimum password length is 8").isLength({ min: 8 })], async (r
         const user = await User.findOne({ email: req.body.email });
         //if our user variable is empty we are gonna create our user else we are gonna send a bad request
         if (user) {
-            return res.status(400).json({ success,error: "Email already exists" });
+            return res.status(400).json({ success:false,error: "Email already exists" });
         }
 
 
@@ -57,11 +57,11 @@ body('password', "minimum password length is 8").isLength({ min: 8 })], async (r
                 // console.log(data.user.id);
                 //sending web token as a response to the clients request and storing it in the clients req header
                 success = true;
-                res.status(200).json({ success, "authtoken": jwt_sign_data });
+                res.status(200).json({ success:true, "authtoken": jwt_sign_data });
             });
     }
     catch (error) {
-        res.status(500).json({success, error: "There are errors" });
+        res.status(500).json({success:false, error: "There are errors" });
         console.error(error.message);
     }
 
@@ -79,11 +79,11 @@ body('password', 'password cannot be blank').notEmpty()], async (req, res) => {
     const { email, password } = req.body;
     const user = await User.findOne({ email });
     if (!user) {
-        return res.status(400).json({ success, "error": "provide correct credentials" })
+        return res.status(400).json({ success: false, "error": "provide correct credentials" })
     }
     comparingPassword = await bcryptjs.compare(password, user.password);
     if (!comparingPassword) {
-        return res.status(400).json({success,  "error": "provide correct credentials" });
+        return res.status(400).json({success:false,  "error": "provide correct credentials" });
     }
     const data = {
         user: {
@@ -93,8 +93,8 @@ body('password', 'password cannot be blank').notEmpty()], async (req, res) => {
     const jwt_sign_data = jwt.sign(data, jwt_secret);
     console.log(jwt_sign_data);
     console.log(data.user.id);
-    success = true;
-    res.status(200).json({success,  "authToken": jwt_sign_data })
+    
+    res.status(200).json({success:true,  "authToken": jwt_sign_data })
 
 
 });

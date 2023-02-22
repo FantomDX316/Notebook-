@@ -5,6 +5,14 @@ import { useState } from "react";
 const NoteState = (props) => {
     const host = "http://localhost:5000";
     const [alert,setAlert] = useState({type:"",msg:""});
+
+    //showAlert function used for showing different alerts to the user
+    const showAlert = (type,msg) =>{
+        setAlert({type:type,msg:msg});
+        setTimeout(()=>{
+            setAlert({type:"",msg:""});
+        },2000);
+    }
    
     const [notes, setNotes] = useState([]);
         // adding note function
@@ -69,7 +77,7 @@ const NoteState = (props) => {
         }
 
     return (
-        <NoteContext.Provider value={{ notes,addNote,deleteNote,fetchNote,editNoteFunc,alert,setAlert}}>
+        <NoteContext.Provider value={{ notes,addNote,deleteNote,fetchNote,editNoteFunc,alert,showAlert}}>
             {props.children}
         </NoteContext.Provider>
     )

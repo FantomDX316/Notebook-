@@ -16,17 +16,21 @@ import Login from './Components/Login';
 
 function App() {
 
-    return (
+  return (
     <>
       <NoteState>
         <Router>
           <Navbar />
-          <Alert/>
-          <Routes>
-            <Route exact path="/" element={<Home />}></Route>
-            <Route exact path="/about" element={<About />}></Route>
-            <Route exact path="/login" element={<Login/>}></Route>
-          </Routes>
+          <div className="container">
+            <Alert />
+          </div>
+          <div className="container">
+            <Routes>
+              <Route exact path="/" element={<Home />}></Route>
+              <Route exact path="/about" element={<About />}></Route>
+              <Route exact path="/login" element={<Login />}></Route>
+            </Routes>
+          </div>
         </Router>
       </NoteState>
 
