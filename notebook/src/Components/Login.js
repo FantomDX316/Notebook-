@@ -10,7 +10,8 @@ const Login = () => {
     const {showAlert} = context;
     
     const handleChange = (e)=>{
-        setCredentials({...credentials,[e.target.name]:e.target.value})
+        setCredentials({...credentials,[e.target.name]:e.target.value});
+        
     }
     const handleSubmit = async (e)=>{
         e.preventDefault();

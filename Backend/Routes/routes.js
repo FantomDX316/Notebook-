@@ -56,7 +56,7 @@ body('password', "minimum password length is 8").isLength({ min: 8 })], async (r
                 // console.log(jwt_sign_data);
                 // console.log(data.user.id);
                 //sending web token as a response to the clients request and storing it in the clients req header
-                success = true;
+                
                 res.status(200).json({ success:true, "authtoken": jwt_sign_data });
             });
     }
