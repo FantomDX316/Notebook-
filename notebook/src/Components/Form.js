@@ -1,8 +1,10 @@
 import React, { useState, useContext, useEffect,useRef } from 'react';
 import Notes from './Notes';
 import NoteContext from '../Context/NoteContext';
+import { useNavigate } from 'react-router-dom';
 const Form = () => {
     const context = useContext(NoteContext);
+    const navigate = useNavigate();
     const { addNote,fetchNote } = context;
     const [note, setNote] = useState({ title: "", description: "", tag: "" });
     const refTitle = useRef(null);
@@ -20,7 +22,13 @@ const Form = () => {
         setNote({ ...note, [e.target.name]: e.target.value });
     }
     useEffect(()=>{
-        fetchNote();
+        if(localStorage.getItem('token')){
+            fetchNote();
+        }
+        else{
+            navigate("/login");
+        }
+        
         // eslint-disable-next-line
     },[]);
 
