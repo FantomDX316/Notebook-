@@ -21,7 +21,7 @@ const NoteState = (props) => {
                 method:"POST",
                 headers:{
                     "Content-Type":"application/json",
-                    "auth_token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNlYmNkZDA3MmRjZjRjZjgwNzc0NTk1In0sImlhdCI6MTY3NjM5ODAzMn0.xLMlvOuyjzu1Q1VsDEiCQL8t56w_7gBM-BfVShLbCoE"
+                    "auth_token":localStorage.getItem('token')
                 },
                 body:JSON.stringify({title,description,tag})
             })
@@ -38,7 +38,7 @@ const NoteState = (props) => {
                 method:"GET",
                 headers:{
                     "Content-Type":"application/json",
-                    "auth_token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNlYmNkZDA3MmRjZjRjZjgwNzc0NTk1In0sImlhdCI6MTY3NjM5ODAzMn0.xLMlvOuyjzu1Q1VsDEiCQL8t56w_7gBM-BfVShLbCoE"
+                    "auth_token":localStorage.getItem('token')
                 }
             });
             const fetchedData = await response.json();
@@ -51,7 +51,7 @@ const NoteState = (props) => {
                 method:"DELETE",
                 headers:{
                     "Content-Type":"application/json",
-                    "auth_token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNlYmNkZDA3MmRjZjRjZjgwNzc0NTk1In0sImlhdCI6MTY3NjM5ODAzMn0.xLMlvOuyjzu1Q1VsDEiCQL8t56w_7gBM-BfVShLbCoE"
+                    "auth_token":localStorage.getItem('token')
                 }
             });
             const deletedNote = await response.json();
@@ -68,7 +68,7 @@ const NoteState = (props) => {
                 method:'PUT',
                 headers:{
                     'Content-Type':'application/json',
-                    "auth_token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNlYmNkZDA3MmRjZjRjZjgwNzc0NTk1In0sImlhdCI6MTY3NjM5ODAzMn0.xLMlvOuyjzu1Q1VsDEiCQL8t56w_7gBM-BfVShLbCoE"
+                    "auth_token":localStorage.getItem('token')
                 },
                 body:JSON.stringify({title,description,tag})
             });

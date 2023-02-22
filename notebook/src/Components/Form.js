@@ -30,7 +30,7 @@ const Form = () => {
         }
         
         // eslint-disable-next-line
-    },[]);
+    });
 
     return (
         <>

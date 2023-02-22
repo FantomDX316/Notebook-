@@ -21,7 +21,7 @@ const SignUp = () => {
             });
             const token = await response.json();
             if(token.success){
-                localStorage.setItem('token',token.authtoken);
+                localStorage.setItem('token',token.authToken);
                 showAlert("success","Signed Up Successfully");
                 navigate('/');
             }
@@ -51,7 +51,7 @@ const SignUp = () => {
                             <label htmlFor="password">Password</label>
                             <input type="password" className="form-control" onChange={handleChange} value={credentials.password} id="password"   name="password" placeholder="Password" required />
                         </div>
-                        <button type="submit" className="btn btn-primary my-2">Login</button>
+                        <button type="submit" className="btn btn-primary my-2">Signup</button>
                     </div>
 
                 </form>

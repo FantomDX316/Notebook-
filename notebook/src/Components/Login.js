@@ -11,7 +11,7 @@ const Login = () => {
     
     const handleChange = (e)=>{
         setCredentials({...credentials,[e.target.name]:e.target.value});
-        
+
     }
     const handleSubmit = async (e)=>{
         e.preventDefault();
@@ -25,7 +25,7 @@ const Login = () => {
         const token = await response.json();
         console.log(token);
         if(token.success){
-            localStorage.setItem("token",token.authtoken);
+            localStorage.setItem("token",token.authToken);
             showAlert("success","Successfully logged in");
             navigate("/");
         }
