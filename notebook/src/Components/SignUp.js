@@ -1,8 +1,11 @@
-import React, {useState,useContext} from 'react';
+import React, {useState,useContext, useEffect} from 'react';
 import { useNavigate } from 'react-router-dom';
 import NoteContext from "../Context/NoteContext";
 
 const SignUp = () => {
+    useEffect(()=>{
+        document.title = "Notebook : Signup";
+    })
     const context = useContext(NoteContext);
     const navigate = useNavigate();
     const {showAlert} = context;

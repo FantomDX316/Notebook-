@@ -1,9 +1,12 @@
-import React, {useState,useContext} from 'react';
+import React, {useState,useContext, useEffect} from 'react';
 import {useNavigate} from 'react-router-dom';
 import NoteContext from '../Context/NoteContext';
 
 
 const Login = () => {
+    useEffect(()=>{
+        document.title = "Notebook : Login"
+    });
     const [credentials,setCredentials] = useState({email:"",password:""});
     const navigate = useNavigate();
     const context = useContext(NoteContext);
