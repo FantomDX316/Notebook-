@@ -1,11 +1,13 @@
 import React from 'react';
 import Form from '../Components/Form';
-const Home = ()=>{
-    return(
+const Home = () => {
+    return (
         <>
-                    <Form/>
+            <div className="container">
+                <Form />
+            </div>
+
         </>
     )
 };
 export default Home;
-        

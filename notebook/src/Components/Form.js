@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 const Form = () => {
     const context = useContext(NoteContext);
     const navigate = useNavigate();
-    const { addNote,fetchNote } = context;
+    const { addNote,fetchNote, showAlert } = context;
     const [note, setNote] = useState({ title: "", description: "", tag: "" });
     const refTitle = useRef(null);
     const refDescription = useRef(null);
@@ -14,6 +14,7 @@ const Form = () => {
     const handleClick = (e) => {
         e.preventDefault();
         addNote(note.title, note.description, note.tag);
+        showAlert("success","Note Added Successfully");
         setNote({ title: "", description: "", tag: "" })
         
     };

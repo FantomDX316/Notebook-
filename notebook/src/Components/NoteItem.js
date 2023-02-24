@@ -4,9 +4,10 @@ import NoteContext from "../Context/NoteContext";
 const NoteItem = (props) => {
     const { note ,toggle} = props;
     const context = useContext(NoteContext);
-    const {deleteNote} = context;
+    const {deleteNote,showAlert} = context;
     const handleClick =()=>{
         deleteNote(note._id);
+        showAlert("success","Note Deleted Successfully");
     };
     const handleEdit=()=>{
         toggle(note._id,note.title,note.description,note.tag);

@@ -7,7 +7,7 @@ const Notes = () => {
     const [editNote, setEditNote] = useState({ id:"",title: "", description: "", tag: "" });
     const ref = useRef(null);
     const closeModal = useRef(null);
-    const { notes , editNoteFunc} = context;
+    const { notes , editNoteFunc,showAlert} = context;
     
     const toggle = (id,title,description,tag) => {
         ref.current.click();
@@ -19,6 +19,7 @@ const Notes = () => {
     const handleEditFunction=()=>{
         editNoteFunc(editNote.id,editNote.title,editNote.description,editNote.tag);
         closeModal.current.click();
+        showAlert("success","Note Updated Successfully");
     }
 
     return (

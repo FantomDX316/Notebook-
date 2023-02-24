@@ -22,17 +22,15 @@ function App() {
       <NoteState>
         <Router>
           <Navbar />
-          <div className="container">
+          <div style={{height:"5vh"}} className="container">
             <Alert />
           </div>
-          <div className="container">
             <Routes>
               <Route exact path="/" element={<Home />}></Route>
               <Route exact path="/about" element={<About />}></Route>
               <Route exact path="/login" element={<Login />}></Route>
               <Route exact path="/signup" element={<SignUp/>}></Route>
             </Routes>
-          </div>
         </Router>
       </NoteState>
 

@@ -1,18 +1,22 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useLocation } from 'react-router-dom'
+import NoteContext from '../Context/NoteContext';
 const Navbar = () => {
+  const context = useContext(NoteContext);
+  const {showAlert} = context;
   const navigate = useNavigate();
   let location = useLocation();
   const handleLogout =()=>{
     localStorage.removeItem('token');
     navigate('/login');
+    showAlert("success","Logged Out Successfully")
   }
   return (
     <>
-      <nav className="navbar bg-dark navbar-expand-lg navbar-dark">
+      <nav className="navbar bg-dark navbar-expand-lg navbar-dark d-flex align-content-center">
         <div className="container-fluid">
-          <h1 className="navbar-brand ">Notebook</h1>
+          <h1 className="navbar-brand mt-1">Notebook</h1>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
