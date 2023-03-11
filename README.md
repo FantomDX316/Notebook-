@@ -1,11 +1,8 @@
-# Notebook
-# Getting Started with Create React App
+# Notebook Frontend
+
 
 ## DESCRIPTION :-
 Notebook - Application that lets you write user specific notes and lets you save them. You can access your notes by logging through your credentials.
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
 
 ## NOTE ! 
 Application is still in development and yet has not been deployed to any of the server hosting platform. 
