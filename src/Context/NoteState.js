@@ -3,7 +3,9 @@ import { useState } from "react";
 
 //This is nothing but the provider component and our context hold the state..... provider component is used to wrap alll the child components to make context available to all the components where the context can be used to acces the state.
 const NoteState = (props) => {
-    const host = "http://localhost:5000";
+    // use it when in development thus use the localhost
+    // const host = "http://localhost:5000"; 
+    const host = "https://notebookbackend.onrender.com";
     const [alert,setAlert] = useState({type:"",msg:""});
 
     //showAlert function used for showing different alerts to the user

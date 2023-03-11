@@ -7,6 +7,7 @@ const SignUp = () => {
         document.title = "Notebook : Signup";
     })
     const context = useContext(NoteContext);
+    const host = "https://notebookbackend.onrender.com";
     const navigate = useNavigate();
     const {showAlert} = context;
     const [credentials,setCredentials] = useState({name:"",email:"",password:""});
@@ -15,7 +16,7 @@ const SignUp = () => {
     };
     const handleSubmit = async (e)=>{
             e.preventDefault();
-            const response = await fetch("http://localhost:5000/api/auth/create_user",{
+            const response = await fetch(`${host}/api/auth/create_user`,{
                 method:"POST",
                 headers:{
                     "Content-Type":"application/json",

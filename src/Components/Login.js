@@ -11,6 +11,7 @@ const Login = () => {
     const navigate = useNavigate();
     const context = useContext(NoteContext);
     const {showAlert} = context;
+    const host = "https://notebookbackend.onrender.com";
     
     const handleChange = (e)=>{
         setCredentials({...credentials,[e.target.name]:e.target.value});
@@ -18,7 +19,7 @@ const Login = () => {
     }
     const handleSubmit = async (e)=>{
         e.preventDefault();
-        const response = await fetch("http://localhost:5000/api/auth/login",{
+        const response = await fetch(`${host}/api/auth/login`,{
             method:"POST",
             headers:{
                 "Content-Type":"application/json"
