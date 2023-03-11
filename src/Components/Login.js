@@ -26,7 +26,6 @@ const Login = () => {
             body: JSON.stringify({email:credentials.email,password:credentials.password})
         });
         const token = await response.json();
-        console.log(token);
         if(token.success){
             localStorage.setItem("token",token.authToken);
             showAlert("success","Successfully logged in");
