@@ -30,7 +30,7 @@ const SignUp = () => {
             }
             else{
                 showAlert("danger","Error Signing Up");
-
+                
             }
 
     }

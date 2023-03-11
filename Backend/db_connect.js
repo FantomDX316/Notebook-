@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 mongoose.set('strictQuery', true);
-const mongoURI = "mongodb://localhost:27017/Notebook";
+require('dotenv').config();
+const mongoURI = process.env.DB_STRING;
 
 const connectToMongo = ()=>{
     mongoose.connect(mongoURI,()=>{

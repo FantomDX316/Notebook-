@@ -5,7 +5,7 @@ import NoteContext from '../Context/NoteContext';
 
 const Login = () => {
     useEffect(()=>{
-        document.title = "Notebook : Login"
+        document.title = "Notebook : Login";
     });
     const [credentials,setCredentials] = useState({email:"",password:""});
     const navigate = useNavigate();
@@ -34,6 +34,7 @@ const Login = () => {
         }
         else{
                 showAlert("danger","Invalid Credentials");
+              
         }
     }
     return (
