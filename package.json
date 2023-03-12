@@ -1,6 +1,5 @@
 {
   "name": "notebook",
-  "homepage": "https://FantomDX316.github.io/Notebook-Frontend",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
