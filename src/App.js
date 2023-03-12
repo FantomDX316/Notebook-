@@ -20,13 +20,13 @@ function App() {
   return (
     <>
       <NoteState>
-        <Router basename = "/Notebook-Frontend">
+        <Router basename = "/">
           <Navbar />
           <div style={{height:"5vh"}} className="container">
             <Alert />
           </div>
             <Routes>
-              <Route exact path="/Notebook-Frontend" element={<Home />}></Route>
+              <Route exact path="/" element={<Home />}></Route>
               <Route exact path="/about" element={<About />}></Route>
               <Route exact path="/login" element={<Login />}></Route>
               <Route exact path="/signup" element={<SignUp/>}></Route>
