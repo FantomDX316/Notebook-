@@ -4,6 +4,7 @@ import NoteContext from '../Context/NoteContext';
 
 
 const Login = () => {
+  
     useEffect(()=>{
         document.title = "Notebook : Login";
     });
@@ -11,7 +12,8 @@ const Login = () => {
     const navigate = useNavigate();
     const context = useContext(NoteContext);
     const {showAlert} = context;
-    const host = "https://notebookbackend.onrender.com";
+    // const host = "http://localhost:5000";
+       const host = "https://notebookbackend.onrender.com";
     
     const handleChange = (e)=>{
         setCredentials({...credentials,[e.target.name]:e.target.value});
@@ -50,7 +52,7 @@ const Login = () => {
                         </div>
                         <div className="form-group ">
                             <label htmlFor="password">Password</label>
-                            <input type="password" className="form-control" id="password" onChange={handleChange} value={credentials.password}  name="password" placeholder="Password" required/>
+                            <input  type="password" className="form-control" id="password" onChange={handleChange} value={credentials.password}  name="password" placeholder="Password" required/>
                         </div>
                         <button type="submit" className="btn btn-primary my-2">Login</button>
                     </div>

@@ -7,7 +7,8 @@ const SignUp = () => {
         document.title = "Notebook : Signup";
     })
     const context = useContext(NoteContext);
-    const host = "https://notebookbackend.onrender.com";
+    // const host = "http://localhost:5000";
+       const host = "https://notebookbackend.onrender.com";
     const navigate = useNavigate();
     const {showAlert} = context;
     const [credentials,setCredentials] = useState({name:"",email:"",password:""});
