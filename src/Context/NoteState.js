@@ -1,3 +1,4 @@
+import React from 'react';
 import NoteContext from "./NoteContext";
 import { useState } from "react";
 
