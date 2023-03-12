@@ -1,11 +1,12 @@
 # Notebook Frontend
 
+## Checkout the app here https://fantomnotebookapp.netlify.app/login
+
 
 ## DESCRIPTION :-
 Notebook - Application that lets you write user specific notes and lets you save them. You can access your notes by logging through your credentials.
 
-## NOTE ! 
-Application is still in development and yet has not been deployed to any of the server hosting platform. 
-You can fork the repository and can run the application in you local host. 
-"Backend" folder contains all the backend code using NodeJS, Epress, MongoDB.
-"notebook" folder contains frontend code is created using ReactJS.
+## NOTE !  
+You can fork the repository and can run the application in you local host as the deployed app is in a slower server which may cause delays, thus to avoid delays run the app in your local host
+
+This repo. consists of the frontend code .... Please check out the Notebook Backend Repo for Backend code
