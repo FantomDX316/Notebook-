@@ -20,7 +20,7 @@ function App() {
   return (
     <>
       <NoteState>
-        <Router basename = "/">
+        <Router>
           <Navbar />
           <div style={{height:"5vh"}} className="container">
             <Alert />
