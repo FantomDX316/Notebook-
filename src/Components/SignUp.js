@@ -7,8 +7,8 @@ const SignUp = () => {
         document.title = "Notebook : Signup";
     })
     const context = useContext(NoteContext);
-    // const host = "http://localhost:5000";
-    const host = "https://notebookbackend.onrender.com";
+    const host = "http://localhost:5000";
+    // const host = "https://notebookbackend.onrender.com";
     const navigate = useNavigate();
     const { showAlert } = context;
     const [credentials, setCredentials] = useState({ name: "", email: "", password: "" });
@@ -45,7 +45,7 @@ const SignUp = () => {
                         <div className="container mx-5">
                             <div className="form-group my-3 ">
                                 <label htmlFor="name">Name</label>
-                                <input type="text" className="form-control" onChange={handleChange} value={credentials.name} name="name" id="name" aria-describedby="emailHelp" placeholder="Enter Your Name" required />
+                                <input type="text" className="form-control" onChange={handleChange} value={credentials.name} name="name" id="name" aria-describedby="emailHelp" placeholder="Enter Your Name" style={{width:"300px"}} required />
 
                             </div>
                             <div className="form-group my-3 ">

@@ -14,6 +14,7 @@ import Alert from './Components/Alert';
 import Login from './Components/Login';
 import SignUp from './Components/SignUp';
 import ParticlesBg from 'particles-bg'
+import Tilt from "react-parallax-tilt";
 
 
 function App() {
@@ -23,15 +24,20 @@ function App() {
       <NoteState>
         <Router>
           <Navbar />
-          <div style={{height:"5vh"}} className="container">
+          <div style={{ height: "5vh" }} className="container">
             <Alert />
           </div>
-            <Routes>
-              <Route exact path="/" element={<Home />}></Route>
-              <Route exact path="/about" element={<About />}></Route>
-              <Route exact path="/login" element={<Login />}></Route>
-              <Route exact path="/signup" element={<SignUp/>}></Route>
-            </Routes>
+          <div className="log d-flex justify-content-center">
+            <Tilt>
+              <img src="logo2.png" width="300px" alt="logo" />
+            </Tilt>
+          </div>
+          <Routes>
+            <Route exact path="/" element={<Home />}></Route>
+            <Route exact path="/about" element={<About />}></Route>
+            <Route exact path="/login" element={<Login />}></Route>
+            <Route exact path="/signup" element={<SignUp />}></Route>
+          </Routes>
         </Router>
         <ParticlesBg type="fountain" bg={true} />
       </NoteState>

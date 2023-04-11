@@ -24,16 +24,16 @@ const Navbar = () => {
           <div className="collapse navbar-collapse links position-relative" id="navbarNav">
             <ul className="navbar-nav">
               <li className="nav-item mx-3">
-                <Link className={`nav-link  ${location.pathname === '/' ? "active" : ""}`} aria-current="page" to="/">Home</Link>
+                <Link style={{fontSize:"1.2rem",fontWeight:"bolder"}} className={`nav-link  ${location.pathname === '/' ? "act homeLink" : "homeLink"}`} aria-current="page" to="/">Home</Link>
               </li>
               <li className="nav-item mx-3">
-                <Link className={`nav-link  ${location.pathname === '/about' ? "active" : ""}`} aria-current="page" to="/about">About</Link>
+                <Link style={{fontSize:"1.2rem",fontWeight:"bolder"}} className={`nav-link  ${location.pathname === '/about' ? "act aboutLink" : "aboutLink"}`} aria-current="page" to="/about">About</Link>
               </li>
               {!localStorage.getItem('token') ?
                 <>
-                  <Link style={{ right: "160px" }} className="btn btn-primary position-absolute log" to="/login" role="button">Login</Link>
-                  <Link style={{ right: "60px" }} className="btn btn-primary position-absolute sign" to="/signup" role="button">SignUp</Link>
-                </> : <button onClick={handleLogout} className="btn btn-primary">Logout</button>
+                  <Link style={{ right: "110px" }} className="btn btn-primary position-absolute log" to="/login" role="button">Login</Link>
+                  <Link style={{ right: "10px" }} className="btn btn-primary position-absolute sign" to="/signup" role="button">SignUp</Link>
+                </> : <button onClick={handleLogout}  style={{ right: "10px" }} className="btn btn-primary position-absolute lgout">Logout</button>
               }
             </ul>
 

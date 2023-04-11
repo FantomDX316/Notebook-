@@ -1,8 +1,8 @@
 .login{
     width: 700px;
     min-width: 436px;
-    height: 500px;
+    height: 400px;
     background-color: rgb(236, 231, 231);
     border-radius: 8px;
-    box-shadow: 4px 0 8px grey;
+    box-shadow: 4px 8px 8px grey;
 }

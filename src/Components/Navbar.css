@@ -1,9 +1,34 @@
-@media screen and  (max-width:991px){
-    .log{
-       
-        top: 34px;
+.homeLink {
+    transition: 0.2s ease-in-out;
+}
+
+.homeLink:hover {
+    color: yellow;
+}
+
+.aboutLink {
+    transition: 0.2s ease-in-out;
+}
+
+.aboutLink:hover {
+    color: yellow;
+}
+
+svg:hover {
+    color: yellow;
+}
+
+@media screen and (max-width:991px) {
+    .log {
+
+        bottom: 10px;
     }
-    .sign{
-        top: 34px;
+
+    .sign {
+        bottom: 10px;
+    }
+
+    .lgout {
+        bottom: 10px;
     }
 }
