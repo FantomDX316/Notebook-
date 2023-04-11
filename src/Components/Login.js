@@ -1,7 +1,7 @@
 import React, {useState,useContext, useEffect} from 'react';
 import {useNavigate} from 'react-router-dom';
 import NoteContext from '../Context/NoteContext';
-
+import "./Login.scss";
 
 const Login = () => {
   
@@ -12,8 +12,8 @@ const Login = () => {
     const navigate = useNavigate();
     const context = useContext(NoteContext);
     const {showAlert} = context;
-    // const host = "http://localhost:5000";
-       const host = "https://notebookbackend.onrender.com";
+    const host = "http://localhost:5000";
+    //    const host = "https://notebookbackend.onrender.com";
     
     const handleChange = (e)=>{
         setCredentials({...credentials,[e.target.name]:e.target.value});
@@ -41,7 +41,10 @@ const Login = () => {
     }
     return (
         <>
-            <div className="container mt-5">
+        <div className="login">
+
+        </div>
+            {/* <div className="container mt-5">
                 <h1 className="mx-5">Login with your credentials</h1>
                 <form onSubmit={handleSubmit}  >
                     <div className="container mx-5">
@@ -58,7 +61,7 @@ const Login = () => {
                     </div>
 
                 </form>
-            </div>
+            </div> */}
 
         </>
     )

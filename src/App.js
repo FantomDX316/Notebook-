@@ -12,7 +12,7 @@ import NoteState from './Context/NoteState';
 import Alert from './Components/Alert';
 import Login from './Components/Login';
 import SignUp from './Components/SignUp';
-
+import ParticlesBg from 'particles-bg'
 
 
 function App() {
@@ -32,6 +32,7 @@ function App() {
               <Route exact path="/signup" element={<SignUp/>}></Route>
             </Routes>
         </Router>
+        <ParticlesBg type="fountain" bg={true} />
       </NoteState>
 
     </>
