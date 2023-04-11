@@ -2,41 +2,41 @@ import React, { useContext } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useLocation } from 'react-router-dom'
 import NoteContext from '../Context/NoteContext';
+import "./Navbar.css";
 const Navbar = () => {
   const context = useContext(NoteContext);
-  const {showAlert} = context;
+  const { showAlert } = context;
   const navigate = useNavigate();
   let location = useLocation();
-  const handleLogout =()=>{
+  const handleLogout = () => {
     localStorage.removeItem('token');
     navigate('/login');
-    showAlert("success","Logged Out Successfully")
+    showAlert("success", "Logged Out Successfully")
   }
   return (
     <>
       <nav className="navbar bg-dark navbar-expand-lg navbar-dark d-flex align-content-center">
         <div className="container-fluid">
-          <h1 className="navbar-brand mt-1">Notebook</h1>
+          <Link to="/"><img src="logo.png" width="170px" alt="logo" /></Link>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
-          <div className="collapse navbar-collapse" id="navbarNav">
+          <div className="collapse navbar-collapse links position-relative" id="navbarNav">
             <ul className="navbar-nav">
-              <li className="nav-item">
+              <li className="nav-item mx-3">
                 <Link className={`nav-link  ${location.pathname === '/' ? "active" : ""}`} aria-current="page" to="/">Home</Link>
               </li>
-              <li className="nav-item">
+              <li className="nav-item mx-3">
                 <Link className={`nav-link  ${location.pathname === '/about' ? "active" : ""}`} aria-current="page" to="/about">About</Link>
               </li>
+              {!localStorage.getItem('token') ?
+                <>
+                  <Link style={{ right: "160px" }} className="btn btn-primary position-absolute log" to="/login" role="button">Login</Link>
+                  <Link style={{ right: "60px" }} className="btn btn-primary position-absolute sign" to="/signup" role="button">SignUp</Link>
+                </> : <button onClick={handleLogout} className="btn btn-primary">Logout</button>
+              }
             </ul>
-          </div>
-          <div className="cred d-flex justify-content-end">
-            {!localStorage.getItem('token')?
-            <>
-              <Link className="btn btn-primary mx-3" to="/login" role="button">Login</Link>
-              <Link className="btn btn-primary" to="/signup" role="button">SignUp</Link>
-            </>: <button onClick={handleLogout} className="btn btn-primary">Logout</button>
-            }
+
           </div>
         </div>
       </nav>
