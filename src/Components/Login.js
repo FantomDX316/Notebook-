@@ -2,6 +2,7 @@ import React, { useState, useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import NoteContext from '../Context/NoteContext';
 import "./Login.css";
+import ParticlesBg from 'particles-bg'
 
 const Login = () => {
 
@@ -43,7 +44,7 @@ const Login = () => {
         <>
 
             <div className="container mt-5 d-flex justify-content-center">
-                <div className="login d-flex justify-content-center flex-column align-items-center">
+                <div className="login d-flex justify-content-center flex-column align-items-center overflow-hidden">
                     <h1 style={{ fontWeight: "bolder" }} className="mx-5">Login with your credentials</h1>
                     <form onSubmit={handleSubmit}  >
                         <div className="container mx-5">
@@ -67,6 +68,7 @@ const Login = () => {
                     </form>
                 </div>
             </div>
+            <ParticlesBg type="fountain" bg={true} />
 
         </>
     )

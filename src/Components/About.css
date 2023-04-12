@@ -1,10 +1,17 @@
+
+.noteImage{
+    background-image: url("./notebook.jpg");
+    background-position: center;
+    background-attachment: fixed;
+}
 .aboutPage {
     width: 1000px;
     min-width: 436px;
-    height: 450px;
-    background-color: rgb(236, 231, 231);
+    height: 100vh;
+    background-color: rgb(220, 218, 218);
     border-radius: 8px;
     box-shadow: 4px 8px 8px grey;
+ 
 }
 @media screen and (max-width:991px) {
     .aboutPage{

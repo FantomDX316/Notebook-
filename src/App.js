@@ -13,7 +13,6 @@ import NoteState from './Context/NoteState';
 import Alert from './Components/Alert';
 import Login from './Components/Login';
 import SignUp from './Components/SignUp';
-import ParticlesBg from 'particles-bg'
 import Tilt from "react-parallax-tilt";
 
 
@@ -22,6 +21,7 @@ function App() {
   return (
     <>
       <NoteState>
+
         <Router>
           <Navbar />
           <div style={{ height: "5vh" }} className="container">
@@ -39,8 +39,12 @@ function App() {
             <Route exact path="/signup" element={<SignUp />}></Route>
           </Routes>
         </Router>
-        <ParticlesBg type="fountain" bg={true} />
+
+
+
+
       </NoteState>
+
 
     </>
   );
