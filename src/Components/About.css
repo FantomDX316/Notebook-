@@ -1,0 +1,13 @@
+.aboutPage {
+    width: 1000px;
+    min-width: 436px;
+    height: 450px;
+    background-color: rgb(236, 231, 231);
+    border-radius: 8px;
+    box-shadow: 4px 8px 8px grey;
+}
+@media screen and (max-width:991px) {
+    .aboutPage{
+        height: 100vh;
+    }
+}

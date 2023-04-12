@@ -27,7 +27,7 @@ function App() {
           <div style={{ height: "5vh" }} className="container">
             <Alert />
           </div>
-          <div className="log d-flex justify-content-center">
+          <div className="log d-flex justify-content-center mt-3">
             <Tilt>
               <img src="logo2.png" width="300px" alt="logo" />
             </Tilt>

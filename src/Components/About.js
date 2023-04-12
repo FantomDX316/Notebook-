@@ -1,18 +1,24 @@
-import React,{useContext, useEffect} from 'react';
-
-const About = ()=>{
+import React, { useContext, useEffect } from 'react';
+import "./About.css";
+const About = () => {
     const context = useContext('../Context/NoteContext');
-    useEffect(()=>{
+    useEffect(() => {
         document.title = "Notebook : About";
-    },[]);
-      return(
+    }, []);
+    return (
         <>
-            <div className="container">
-                <h1 className='
-                my-4'>About Notebook</h1>
-                <h2>This app lets you save your notes and lets you retrieve em' whenever or wherever you need {context}
+            <div className="container d-flex justify-content-center">
+                <div className="aboutPage  ">
+                    <h1 style={{ color: "violet", fontWeight: "bolder", textDecoration: "underline", paddingLeft: "20px" }}>Notebook</h1>
+                    <p style={{ color: "green", fontWeight: "bolder", fontSize: "1.5rem", padding: "20px" }}>Notebook Application lets the user create user specific Notes, it can be either your daily tasks reminder or it can be your personal diary or it can be whatever you want to be allowing you to access your notes from anywhere, Notebook is accessible to user itself and is not visible to other unless user provides access to someone else.</p>
+                    <p style={{ color: "red", fontWeight: "bolder", fontSize: "1.3rem", textAlign: "center" }} >Are you Excited! Yeah there is no need of pen and paper for your notes</p>
+                    <h2 style={{ color: "violet", fontWeight: "bolder", textDecoration: "underline", paddingLeft: "20px" }}>Tech Stack</h2>
+                    <ul style={{fontSize:"1.5rem",fontWeight:"bold",paddingLeft: "40px"}} >
+                        <li>Frontend - HTML, CSS, JS, ReactJS</li>
+                        <li>Backend - JS, NodeJS, ExpressJS, MongoDB</li>
+                    </ul>
 
-                </h2>
+                </div>
             </div>
         </>
     )

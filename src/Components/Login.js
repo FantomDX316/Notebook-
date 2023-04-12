@@ -44,19 +44,24 @@ const Login = () => {
 
             <div className="container mt-5 d-flex justify-content-center">
                 <div className="login d-flex justify-content-center flex-column align-items-center">
-                    <h1 style={{fontWeight:"bolder"}} className="mx-5">Login with your credentials</h1>
+                    <h1 style={{ fontWeight: "bolder" }} className="mx-5">Login with your credentials</h1>
                     <form onSubmit={handleSubmit}  >
                         <div className="container mx-5">
                             <div className="form-group my-3 ">
                                 <label htmlFor="email">Email address</label>
-                                <input type="email" className="form-control" onChange={handleChange} value={credentials.email} name="email" id="email" aria-describedby="emailHelp" placeholder="Enter email" style={{width:"300px"}} required />
+                                <input type="email" className="form-control" onChange={handleChange} value={credentials.email} name="email" id="email" aria-describedby="emailHelp" placeholder="Enter email" style={{ width: "300px" }} required />
 
                             </div>
                             <div className="form-group ">
                                 <label htmlFor="password">Password</label>
-                                <input type="password" className="form-control" id="password" onChange={handleChange} value={credentials.password} name="password" placeholder="Password" style={{width:"300px"}} required />
+                                <input type="password" className="form-control" id="password" onChange={handleChange} value={credentials.password} name="password" placeholder="Password" style={{ width: "300px" }} required />
                             </div>
-                            <button type="submit" className="btn btn-primary my-2">Login</button>
+                            <div style={{ width: "300px" }} className="buttons d-flex justify-content-center align-items-center flex-column">
+                                <button type="submit" style={{ width: "100px" }} className="btn btn-primary my-2">Login</button><br />
+                                <h6><a href=""> Forgot Password</a> </h6>
+                            </div>
+
+
                         </div>
 
                     </form>

@@ -24,10 +24,13 @@ const Navbar = () => {
           <div className="collapse navbar-collapse links position-relative" id="navbarNav">
             <ul className="navbar-nav">
               <li className="nav-item mx-3">
-                <Link style={{fontSize:"1.2rem",fontWeight:"bolder"}} className={`nav-link  ${location.pathname === '/' ? "act homeLink" : "homeLink"}`} aria-current="page" to="/">Home</Link>
+                <Link style={{fontSize:"1.2rem",fontWeight:"bolder"}} className={`nav-link  ${location.pathname === '/' ? "act  homeLink" : "homeLink"}`} aria-current="page" to="/">Home</Link>
               </li>
               <li className="nav-item mx-3">
-                <Link style={{fontSize:"1.2rem",fontWeight:"bolder"}} className={`nav-link  ${location.pathname === '/about' ? "act aboutLink" : "aboutLink"}`} aria-current="page" to="/about">About</Link>
+                <Link style={{fontSize:"1.2rem",fontWeight:"bolder"}} className={`nav-link  ${location.pathname === '/about' ? "act  aboutLink" : "aboutLink"}`} aria-current="page" to="/about">About</Link>
+              </li>
+              <li className="nav-item mx-3">
+                <Link style={{fontSize:"1.2rem",fontWeight:"bolder"}} className={`nav-link  ${location.pathname === '/about' ? "act  aboutLink" : "aboutLink"}`} aria-current="page" to="/about">News</Link>
               </li>
               {!localStorage.getItem('token') ?
                 <>
