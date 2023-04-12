@@ -19,23 +19,25 @@ const SignUp = () => {
     };
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const response = await fetch(`${host}/api/auth/create_user`, {
+        const response = await fetch(`${host}/api/auth/emailVerify`, { //create_user
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({ name: credentials.name, email: credentials.email, password: credentials.password })
         });
-        const token = await response.json();
-        if (token.success) {
-            localStorage.setItem('token', token.authToken);
-            showAlert("success", "Signed Up Successfully");
-            navigate('/');
-        }
-        else {
-            showAlert("danger", "Error Signing Up");
+        const data = await response.json();
+        console.log(data);
+        // const token = await response.json();
+        // if (token.success) {
+        //     localStorage.setItem('token', token.authToken);
+        //     showAlert("success", "Signed Up Successfully");
+        //     navigate('/');
+        // }
+        // else {
+        //     showAlert("danger", "Error Signing Up");
 
-        }
+        // }
 
     }
     return (
