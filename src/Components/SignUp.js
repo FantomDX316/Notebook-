@@ -48,6 +48,7 @@ const SignUp = () => {
                 setOtpComp(false);
             }, 1000 * 240)
         } else if (!data.success) {
+            showAlert("danger",data.error);
             setFetching(false)
 
         }
@@ -97,7 +98,7 @@ const SignUp = () => {
                     <div className="signup d-flex justify-content-center flex-column align-items-center overflow-hidden">
                         <h1 style={{ fontWeight: "bolder" }} className="mx-5">SignUp with your credentials</h1>
                         <form onSubmit={handleSubmit}>
-                            <div className="container mx-5">
+                            <div className="container mx-5 ">
                                 <div className="form-group my-3 ">
                                     <label htmlFor="name">Name</label>
                                     <input type="text" className="form-control" onChange={handleChange} value={credentials.name} name="name" id="name" aria-describedby="emailHelp" placeholder="Enter Your Name" style={{ width: "300px" }} required />
@@ -112,7 +113,7 @@ const SignUp = () => {
                                     <label htmlFor="password">Password</label>
                                     <input type="password" className="form-control" onChange={handleChange} value={credentials.password} id="password" name="password" placeholder="Password" style={{ width: "300px" }} required />
                                 </div>
-                                <button type="submit" className="btn btn-primary my-2">Signup</button>
+                                <button  type="submit" className="btn btn-primary my-2">Signup</button>
                             </div>
 
                         </form>
