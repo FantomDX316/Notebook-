@@ -5,4 +5,9 @@
     background-color: rgb(236, 231, 231);
     border-radius: 8px;
     box-shadow: 4px 8px 8px grey;
+    background-image: url("./trans.png");
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
 }

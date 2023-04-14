@@ -1,0 +1,9 @@
+.noteBook{
+    /* border: 2px solid black; */
+    width: 1200px;
+    min-width: 400px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px grey;
+    background-color: rgb(217, 212, 212);
+    overflow: hidden;
+}

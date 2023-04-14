@@ -14,8 +14,8 @@ const NoteItem = (props) => {
     }
     return (
         <>
-            <div className="col-md-3 my-3">
-                <div className="card text-break" style={{ width: "18rem" }}>
+            <div className="col-xl-4 col-lg-6 col-md-12 col-sm-12 my-3">
+                <div className="card text-break" style={{ width: "18rem", boxShadow:"4px 4px 4px grey" }}>
                     <div className="card-body">
                         <div className="d-flex align-items-center">
                             <h5 className="card-title">{note.title}</h5>

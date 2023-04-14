@@ -6,7 +6,8 @@ import { useState } from "react";
 const NoteState = (props) => {
     // use it when in development thus use the localhost
     // const host = "http://localhost:5000"; 
-    const host = "https://notebookbackend.onrender.com";
+    // const host = "https://notebookbackend.onrender.com";
+    const host = "http://localhost:5000"
     const [alert,setAlert] = useState({type:"",msg:""});
 
     //showAlert function used for showing different alerts to the user

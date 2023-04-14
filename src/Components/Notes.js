@@ -24,10 +24,10 @@ const Notes = () => {
 
     return (
         <>
-            <div className="container my-3">
+            <div className="container my-3 mx-5">
                 <h1>Your Notes</h1>
                 {notes.length===0 && "No Notes to Display"}
-                <div className="mod">
+                <div className="mod" style={{color:"red"}}>
                     <button type="button" ref={ref} className="btn btn-primary d-none" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         Launch demo modal
                     </button>
@@ -65,7 +65,7 @@ const Notes = () => {
                         </div>
                     </div>
                 </div>
-                <div className="row">
+                <div className="row col-lg-12">
                     {notes.map((note) => {
                         return <NoteItem key={note._id} note={note} toggle={toggle} />
                     })}
