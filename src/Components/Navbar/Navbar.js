@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useLocation } from 'react-router-dom'
-import NoteContext from '../Context/NoteContext';
+import NoteContext from '../../Context/NoteContext';
 import "./Navbar.css";
 const Navbar = () => {
   const context = useContext(NoteContext);

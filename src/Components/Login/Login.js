@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import NoteContext from '../Context/NoteContext';
+import NoteContext from '../../Context/NoteContext';
 import "./Login.css";
 import ParticlesBg from 'particles-bg'
 import loading from "./Book.gif"

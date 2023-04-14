@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import Form from '../Components/Form';
+import Form from '../Form/Form';
 const Home = () => {
     useEffect(()=>{
         document.title = "Notebook : Home"

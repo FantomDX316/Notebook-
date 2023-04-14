@@ -1,6 +1,6 @@
 import React, { useContext, useRef, useState } from 'react';
-import NoteContext from '../Context/NoteContext'
-import NoteItem from './NoteItem';
+import NoteContext from '../../Context/NoteContext'
+import NoteItem from '../NoteItem/NoteItem';
 
 const Notes = () => {
     const context = useContext(NoteContext);

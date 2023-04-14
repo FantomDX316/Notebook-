@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect, useRef } from 'react';
-import Notes from './Notes';
-import NoteContext from '../Context/NoteContext';
+import Notes from '../Notes/Notes';
+import NoteContext from '../../Context/NoteContext';
 import { useNavigate } from 'react-router-dom';
 import "./Form.css";
 import ParticlesBg from 'particles-bg';

@@ -6,13 +6,13 @@ import {
   Routes,
   Route
 } from 'react-router-dom';
-import Navbar from './Components/Navbar';
-import Home from './Components/Home';
-import About from './Components/About';
+import Navbar from './Components/Navbar/Navbar';
+import Home from './Components/Home/Home';
+import About from './Components/About/About';
 import NoteState from './Context/NoteState';
-import Alert from './Components/Alert';
-import Login from './Components/Login';
-import SignUp from './Components/SignUp';
+import Alert from './Components/Alert/Alert';
+import Login from './Components/Login/Login';
+import SignUp from './Components/SignUp/SignUp';
 import Tilt from "react-parallax-tilt";
 
 
