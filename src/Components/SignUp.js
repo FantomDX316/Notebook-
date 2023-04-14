@@ -11,25 +11,49 @@ const SignUp = () => {
     })
     const [fetching, setFetching] = useState(false);
     const [otpComp, setOtpComp] = useState(false);
+    const [otp, setOtp] = useState("");
     const context = useContext(NoteContext);
     const host = "http://localhost:5000";
     // const host = "https://notebookbackend.onrender.com";
     const navigate = useNavigate();
     const { showAlert } = context;
     const [credentials, setCredentials] = useState({ name: "", email: "", password: "" });
+
+    //handle change
     const handleChange = (e) => {
         setCredentials({ ...credentials, [e.target.name]: e.target.value });
     };
-    const otpHandler = async (e) => {
+
+    //otp change
+    const otpChange = (e) => {
+        setOtp(e.target.value);
+    }
+
+    // otp Submit
+    const otpSubmit = async (e) => {
         e.preventDefault();
         const response = await fetch(`${host}/api/auth/create_user`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
+            body: JSON.stringify({ oneTimePassword: otp, name: credentials.name, email: credentials.email, password: credentials.password })
 
-        })
+        });
+        const token = await response.json();
+        if (token.success) {
+            localStorage.setItem('token', token.authToken);
+            showAlert("success", "Signed Up Successfully");
+            navigate('/');
+        }
+        else {
+            showAlert("danger", token.error);
+            setOtpComp(false);
+
+        }
     }
+
+    //handleSubmit
     const handleSubmit = async (e) => {
         e.preventDefault();
         setFetching(true);
@@ -48,21 +72,12 @@ const SignUp = () => {
                 setOtpComp(false);
             }, 1000 * 240)
         } else if (!data.success) {
-            showAlert("danger",data.error);
+            showAlert("danger", data.error);
             setFetching(false)
 
         }
         console.log(data);
-        // const token = await response.json();
-        // if (token.success) {
-        //     localStorage.setItem('token', token.authToken);
-        //     showAlert("success", "Signed Up Successfully");
-        //     navigate('/');
-        // }
-        // else {
-        //     showAlert("danger", "Error Signing Up");
 
-        // }
 
     }
     if (fetching) {
@@ -85,8 +100,8 @@ const SignUp = () => {
                 <div className="container mt-5 d-flex justify-content-center">
                     <div className="signup d-flex justify-content-center flex-column align-items-center overflow-hidden">
                         <h1 style={{ fontWeight: "bolder" }}>Enter OTP sent to your mail</h1>
-                        <form onSubmit={otpHandler}>
-                            <input type="text"/>
+                        <form onSubmit={otpSubmit}>
+                            <input type="text" onChange={otpChange} required />
                             <button className="btn btn-primary my-2" type="submit" >Send</button>
                         </form>
 
@@ -113,7 +128,7 @@ const SignUp = () => {
                                     <label htmlFor="password">Password</label>
                                     <input type="password" className="form-control" onChange={handleChange} value={credentials.password} id="password" name="password" placeholder="Password" style={{ width: "300px" }} required />
                                 </div>
-                                <button  type="submit" className="btn btn-primary my-2">Signup</button>
+                                <button type="submit" className="btn btn-primary my-2">Signup</button>
                             </div>
 
                         </form>
