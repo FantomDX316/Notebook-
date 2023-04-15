@@ -30,7 +30,7 @@ const Navbar = () => {
                 <Link style={{fontSize:"1.2rem",fontWeight:"bolder"}} className={`nav-link  ${location.pathname === '/about' ? "act  aboutLink" : "aboutLink"}`} aria-current="page" to="/about">About</Link>
               </li>
               <li className="nav-item mx-3">
-                <Link style={{fontSize:"1.2rem",fontWeight:"bolder"}} className={`nav-link  ${location.pathname === '/about' ? "act  aboutLink" : "aboutLink"}`} aria-current="page" to="/about">News</Link>
+                <Link style={{fontSize:"1.2rem",fontWeight:"bolder"}} className={`nav-link  ${location.pathname === '/news' ? "act  newsLink" : "newsLink"}`} aria-current="page" to="/news">News</Link>
               </li>
               {!localStorage.getItem('token') ?
                 <>

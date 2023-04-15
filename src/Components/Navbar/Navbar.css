@@ -1,6 +1,10 @@
-
-.homeLink {
+.homeLink,
+.newsLink {
     transition: 0.2s ease-in-out;
+}
+
+.newsLink:hover {
+    color: yellow;
 }
 
 .homeLink:hover {
