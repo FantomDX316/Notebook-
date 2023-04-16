@@ -19,7 +19,8 @@ const News = () => {
     return (
         <>
             <div className="container d-flex justify-content-center">
-                <div className="news row d-flex justify-content-center">
+                <div className="news row d-flex justify-content-center align-items-center">
+                    <h1 style={{color:"red",fontWeight:"bolder"}}>Read News while Creating your notes!!!</h1>
                     {news.map((key) => {
                         return (
                             <div key={key.url} className="newsItem col-md-6 col-lg-4 col-sm-12 d-flex justify-content-center">
