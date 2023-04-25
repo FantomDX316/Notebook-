@@ -1,6 +1,7 @@
 # Notebook Frontend
 
-## Checkout the app here https://fantomnotebookapp.netlify.app/login
+## Checkout the app here https://fantomnotebookapp.netlify.app/login  
+## Above link is outdated version of the app... Clone the repo to checkout new changes... New changes will be reflected soon
 
 
 ## DESCRIPTION :-
