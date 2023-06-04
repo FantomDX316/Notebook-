@@ -24,8 +24,11 @@ const Login = () => {
     const [otp, setOtp] = useState("");
 
     const { showAlert } = context;
-    const host = "http://localhost:5000";
-    //    const host = "https://notebookbackend.onrender.com";
+    //development url
+    // const host = process.env.REACT_APP_DEV_API_URL;
+
+    //production url
+    const host = process.env.REACT_APP_BASE_API_URL;
 
     //otp Change
     const otpChange = (e) => {

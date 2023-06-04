@@ -13,8 +13,13 @@ const SignUp = () => {
     const [otpComp, setOtpComp] = useState(false);
     const [otp, setOtp] = useState("");
     const context = useContext(NoteContext);
-    const host = "http://localhost:5000";
-    // const host = "https://notebookbackend.onrender.com";
+
+    //development api url
+    // const host = process.env.REACT_APP_DEV_API_URL;
+
+    //production api url
+    const host = process.env.REACT_APP_BASE_API_URL;
+
     const navigate = useNavigate();
     const { showAlert } = context;
     const [credentials, setCredentials] = useState({ name: "", email: "", password: "" });
