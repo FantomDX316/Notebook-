@@ -6,7 +6,7 @@
 Notebook - Application that lets you write user specific notes and lets you save them. You can access your notes by logging through your credentials.
 
 ## How to Start
-Clone the repo. to your local machine then - 
+### Clone the repo. to your local machine then - 
 ```npm run start```
 
 ## NOTE !  
