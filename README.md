@@ -1,8 +1,6 @@
 # Notebook Frontend
 
 ## Checkout the app here https://fantomnotebookapp.netlify.app  
-## Above link is outdated version of the app... Clone the repo to checkout new changes... New changes will be deployed soon till then clone and check out
-
 
 ## DESCRIPTION :-
 Notebook - Application that lets you write user specific notes and lets you save them. You can access your notes by logging through your credentials.
