@@ -14,4 +14,5 @@ Notebook - Application that lets you write user specific notes and lets you save
 ### =>News tab of the notebook app is not working because of free api which does not work in production build. Works fine in local server
 
 
-This repo. consists of the frontend code .... Please check out the Notebook Backend Repo. here  https://github.com/FantomDX316/Notebook-Backend
+This repo. consists of the frontend code .... 
+Please check out the Notebook Backend Repo. here  https://github.com/FantomDX316/Notebook-Backend
